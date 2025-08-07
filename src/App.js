@@ -1,25 +1,19 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import './App.css'; // <-- Don't forget this import!
+import './App.css';
+import GitHubSearch from './GitHubSearch'; // 
 
 function App() {
   return (
     <BrowserRouter>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
+        <h1>Github User Search</h1>
+        <Link to="/search">Click Here</Link> {/* Link */}
       </nav>
 
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
+      <Routes>
+        
+        <Route path="/search" element={<GitHubSearch />} /> {/* Route */}
+      </Routes>
     </BrowserRouter>
   );
 }
